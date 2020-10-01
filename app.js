@@ -14,7 +14,6 @@ function strFilter(filterStr, checkStr) {
     if (typeof checkStr !== 'string') {
         checkStr = checkStr.toString();
     }
-    console.log(filterStr, checkStr)
     if (checkStr.includes(filterStr)) {
         return true;
     } else {
