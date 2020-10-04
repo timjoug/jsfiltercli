@@ -1,5 +1,4 @@
-const mock = require('./mock'),
-    data = require('./data');
+const data = require('./data');
 
 const objToCheck = data.data;
 
