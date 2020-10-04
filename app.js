@@ -52,8 +52,6 @@ function filteredResult(filterStr) {
         testRes = strFilter(filterStr, elt.name);
         if (testRes === true) { res.push(elt) };
     });
-    // if (testRes === true) { res += strToCheck };
-    console.log(res)
     return res;
 }
 
