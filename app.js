@@ -9,19 +9,23 @@ const objToCheck = data.data;
  */
 function routingFunction() {
     let finalRes = objToCheck,
-        filterStr,
+        filterStr = [],
         filterBool = false,
         countBool = false;
     process.argv.forEach(elt => {
         if (elt.includes('--filter=')) {
-            filterStr = elt.substring(9);
+            filterStr.push(elt.substring(9));
             filterBool = true;
         }
         if (elt.includes('--count')) {
             countBool = true;
         }
     });
-    if (filterBool === true) { finalRes = filteredResult(finalRes, filterStr); }
+    if (filterBool === true) {
+        filterStr.forEach(process => {
+            finalRes = filteredResult(finalRes, process);
+        })
+    }
     if (countBool === true) { finalRes = countResult(finalRes); }
     return finalRes;
 }
